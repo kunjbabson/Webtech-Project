@@ -144,6 +144,10 @@
     </main>
     <h1 id="welcome">Southeast Asia</h1>
     <br />
+    <p>
+      Southeast Asia, also spelled South East Asia and South-East Asia, and also known as Southeastern Asia or SEA, is the geographical southeastern subregion of Asia, consisting of the regions that are south of China, south-east of the Indian subcontinent and north-west of Australia. Southeast Asia is bordered to the north by East Asia, to the west by South Asia and the Bay of Bengal, to the east by Oceania and the Pacific Ocean, and to the south by Australia and the Indian Ocean. 
+    </p>
+    <br>
 
     <table class="facts">
       <caption>
@@ -191,6 +195,8 @@
       <li>Chemicals</li>
       <li>Oil and Gas</li>
     </div>
+    <br>
+    <div class="weatherWidget" ></div>
     <img
       src="images/southeastinpictures.png"
       alt="South Asia in images"
@@ -228,6 +234,27 @@
   gtag('js', new Date());
 
   gtag('config', 'G-DSP6QQC987');
+
+    //Found this free cool widget along with its code on https://www.visualcrossing.com/resources/documentation/weather-api/how-do-i-add-weather-forecast-to-my-webpage/ 
+window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"ESY7M5QCCX5FK66P7LUG4T8DV", //Sign up for your personal key
+       location:"Singapore, Singapore", //Enter an address
+       unitGroup:"us", //"us" or "metric"
+       forecastDays:5, //how many days forecast to show
+       title:"Singapore", //optional title to show in the 
+       showTitle:true, 
+       showConditions:true
+   });
+  
+   (function() {
+   let d = document
+   s = d.createElement('script');
+   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
 </script>
   </body>
 </html>

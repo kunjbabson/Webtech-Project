@@ -144,6 +144,10 @@
     </main>
     <h1 id="welcome">South Asia</h1>
     <br />
+    <p>
+      South Asia is the southern region of Asia, which is defined in both geographical and ethno-cultural terms. The region consists of the countries of Afghanistan, Bangladesh, Bhutan, India, Nepal, Pakistan, Sri Lanka and the Maldives. Topographically, it is dominated by the Indian Plate and defined largely by the Indian Ocean on the south, and the Himalayas, Karakoram, and Pamir mountains on the north. The Amu Darya, which rises north of the Hindu Kush, forms part of the northwestern border.
+    <br>
+    </p>
 
     <table class="facts">
       <caption>
@@ -191,6 +195,9 @@
       <li>Information Technology</li>
       <li>Chemicals</li>
     </div>
+    <br>
+    <div class="weatherWidget" ></div>
+    <br>
     <img
       src="images/southasiainpictures.png"
       alt="South Asia in images"
@@ -224,6 +231,27 @@
   gtag('js', new Date());
 
   gtag('config', 'G-DSP6QQC987');
+
+    //Found this free cool widget along with its code on https://www.visualcrossing.com/resources/documentation/weather-api/how-do-i-add-weather-forecast-to-my-webpage/ 
+window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"ESY7M5QCCX5FK66P7LUG4T8DV", //Sign up for your personal key
+       location:"Mumbai, India", //Enter an address
+       unitGroup:"us", //"us" or "metric"
+       forecastDays:5, //how many days forecast to show
+       title:"Mumbai, India", //optional title to show in the 
+       showTitle:true, 
+       showConditions:true
+   });
+  
+   (function() {
+   let d = document
+   s = d.createElement('script');
+   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
 </script>
   </body>
 </html>

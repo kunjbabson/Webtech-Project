@@ -145,6 +145,11 @@
     <h1 id="welcome">Oceania</h1>
     <br />
 
+    <p>
+      Oceania is a geographic region that includes Australasia, Melanesia, Micronesia and Polynesia. Spanning the Eastern and Western Hemispheres, Oceania has a land area of 8,525,989 square kilometres (3,291,903 sq mi) and a population of over 41 million. When compared with the continents, the region of Oceania is the smallest in land area and the second smallest in population after Antarctica.
+      Oceania has a diverse mix of economies from the highly developed and globally competitive financial markets. 
+    </p>
+<br>
     <table class="facts">
       <caption>
         Quick Facts
@@ -190,6 +195,9 @@
       <li>Mining</li>
       <li>Agriculture</li>
     </div>
+    <br>
+    <div class="weatherWidget" ></div>
+    <br>
     <img
       src="images/oceaniainpictures.png"
       alt="South Asia in images"
@@ -223,6 +231,27 @@
   gtag('js', new Date());
 
   gtag('config', 'G-DSP6QQC987');
+
+    //Found this free cool widget along with its code on https://www.visualcrossing.com/resources/documentation/weather-api/how-do-i-add-weather-forecast-to-my-webpage/ 
+window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"ESY7M5QCCX5FK66P7LUG4T8DV", //Sign up for your personal key
+       location:"Sydney, Australia", //Enter an address
+       unitGroup:"us", //"us" or "metric"
+       forecastDays:5, //how many days forecast to show
+       title:"Sydney, Australia", //optional title to show in the 
+       showTitle:true, 
+       showConditions:true
+   });
+  
+   (function() {
+   let d = document
+   s = d.createElement('script');
+   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
 </script>
   </body>
 </html>
