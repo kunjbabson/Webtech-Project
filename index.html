@@ -99,18 +99,22 @@
             text-align: center;
             color: red;
         }
-        .header-img {
+       /* .header-img {
         width: 100%;
         height: 600px;
-        background: url('images/indexheader.jpg');
+        background: url('images/index-photo.jpg');
         background-size: cover;
-        }
+        } */
         table{
           margin-left: auto;
           margin-right: auto;
         }
         #info{
             margin-right: 30px;
+        }
+        #heado{
+        width: 100%;
+        height: 600px;
         }
        
       </style>
@@ -127,14 +131,18 @@
         <a href="sitemap.html" class="leftalign"> Sitemap </a>
     </div> 
     <main>
-        <div class="header-img"></div>
+      
+    <div class="header-img"></div>
+    <img src="images/index-photo.jpg" alt="" id="heado">
     </main>
     <div id="needm">
         <h1>Growth and Diversity in Asia Pacific</h1>
         <div id="info">
           <p>
-            the Asia-Pacific region is of vast proportions, stretching northward to Mongolia, southward to New Zealand, eastward to the island states of Oceania, and westward to Pakistan. It also encompasses an enormous variation of climate and topography, from tropical to arctic, and from the Himalayas to coral reefs.
-            <br> Over the last 20 years, the Asia-Pacific region has continued to keep high economic growth rates exceeding those in other regions, and has consequently come to be known as the "growth center" of the global economy. Over the coming years, it is expected to continue to enjoy the highest growth rates in the world and to serve as the engine of world economy.
+            The Asia-Pacific region is of vast proportions, stretching northward to Mongolia, southward to New Zealand, eastward to the island states of Oceania, and westward to Pakistan. It also encompasses an enormous variation of climate and topography, from tropical to arctic, and from the Himalayas to coral reefs.
+            <br> 
+            <br>
+            Over the last 20 years, the Asia-Pacific region has continued to keep high economic growth rates exceeding those in other regions, and has consequently come to be known as the "growth center" of the global economy. Over the coming years, it is expected to continue to enjoy the highest growth rates in the world and to serve as the engine of world economy.
            The region is characterized by a larger population and stronger economic growth than any other, a rich diversity of both socio-economic and natural environment, and an abundance of natural resources including tropical rain forests and marine products. In recent years, these have been joined as salient features by a new wave of economic growth centered around the Huanan (South China) economic sphere, a quickening of intraregional trade, and rise in intraregional interdependence.
           </p>
       </div>
@@ -220,6 +228,29 @@
   gtag('js', new Date());
 
   gtag('config', 'G-DSP6QQC987');
+
+  const slides = [
+        "images/india-photo.jpg",
+        "images/japan-photo.jpg",
+        "images/australia-photo.jpg",
+        "images/index-photo.jpg"
+      ];
+
+      let i = 0;
+      function slideShow() {
+        let headerImage = document.getElementById("heado");
+        if (i === slides.length) {
+          i = 0;
+        }
+        headerImage.src = slides[i];
+        i++;
+        setTimeout(slideShow, 1500);
+      }
+
+document.querySelector("body").onload = slideShow;
+
+
+
 </script> 
 </body>
 </html>
