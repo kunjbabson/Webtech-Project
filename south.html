@@ -226,6 +226,41 @@
     <hr />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSP6QQC987"></script>
 <script>
+
+const colors = [
+          "blue",
+          "yellow",
+          "green",
+          "red"
+      ]
+
+      let i = 0;
+      function changeColor() {
+        let colorSwitch = document.getElementById("welcome");
+        if (i === colors.length) {
+          i = 0;
+          
+        }
+        
+        colorSwitch.style.color = colors[i];
+        i++;
+        setTimeout(changeColor, 500);
+      }
+      const image = document.getElementById("inimages");
+      function overImage() {
+        image.style.width = "150%";
+      }
+      function outImage() {
+        image.style.width = "90%";
+      }
+      document.getElementById("inimages").onmouseover = function () {
+        overImage("inimages");
+      };
+      document.getElementById("inimages").onmouseout = function () {
+        outImage("inimages");
+      };
+
+      document.getElementById("welcome").onmouseover = changeColor;
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
